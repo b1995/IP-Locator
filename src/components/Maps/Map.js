@@ -1,6 +1,7 @@
 import React from "react"
 import GoogleMapReact from 'google-map-react'
 import LocationPin from "../LocationPin/LocationPin"
+import KEY from "../../../key.js"
 
 function Map ({ location, zoomLevel }){
     return(
@@ -9,7 +10,7 @@ function Map ({ location, zoomLevel }){
   
       <div className="google-map">
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '' }}
+          bootstrapURLKeys={{ key: KEY.map }}
           defaultCenter={location}
           defaultZoom={zoomLevel}
         >
