@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
+import locationIcon from '@iconify/react'
 
 function LocationPin(text) {
     return(
