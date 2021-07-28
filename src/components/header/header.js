@@ -11,7 +11,7 @@ function Headertext() {
             <input
             type = "text"
             />
-            <button type="submit"><i class="arrow right"></i></button>
+            <button type="submit"><i className="arrow right"></i></button>
           </form>
 
         </header>
