@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import locationIcon from '@iconify/react'
 
-function LocationPin(text) {
+function LocationPin({text}) {
     return(
         <div className="pin">
             <Icon icon = {locationIcon} className="pin-icon"></Icon>

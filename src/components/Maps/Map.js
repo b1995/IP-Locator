@@ -1,34 +1,40 @@
-import React from "react"
+import React, { Component } from "react"
 import GoogleMapReact from 'google-map-react'
-import LocationPin from "../LocationPin/LocationPin"
 import KEY from "../../key.js"
 import "../../App.css"
+import LocationPin from "../LocationPin/LocationPin.js"
+
 
 /*const location = [
   address: '1600 Amphitheatre Parkway, Mountain View, california.',
   lat: 37.42216,
   lng: -122.08427,
 ]*/
-function Map ({ location, zoomLevel }){
+
+class Map extends Component{
+  static defaultProps = {
+      center:{
+        lat: 47.42216,
+        lng: -225.08427,
+      },
+      zoom : 11
+  };
+  render(){
     return(
-    <div className="map">
-      <h1>Hello</h1>
-      <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-  
-      <div className="google-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: KEY.map }}
-          defaultCenter={location}
-          defaultZoom={zoomLevel}
-        >
-          <LocationPin
-            lat={location.lat}
-            lng={location.lng}
-            text={location.address}
-          />
-        </GoogleMapReact>
-      </div>
-  </div>
-)}
+      <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: KEY.map }}
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
+        yesIWantToUseGoogleMapApiInternals
+      >
+        <LocationPin
+          lat={47.42216}
+          lng={-225.08427}
+          text="My Marker"
+        />
+      </GoogleMapReact>
+    </div>
+)}}
 
 export default Map
