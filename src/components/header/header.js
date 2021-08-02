@@ -2,13 +2,14 @@
 import background from '../../Assets/pattern-bg.png'
 import '../../App.css'
 import React, {useRef} from 'react'
+import FetchData from '../fetchData'
 function Headertext() {
 
 const searchButton = useRef(null)
 
   const handleClick= () => {
     const value = searchButton.current.value
-    console.log(value)
+    console.log(FetchData(value))
   }
 
     
