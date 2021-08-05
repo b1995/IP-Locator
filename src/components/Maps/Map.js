@@ -1,9 +1,8 @@
-import React, { Component, useEffect } from "react"
+import React, { Component } from "react"
 import GoogleMapReact from 'google-map-react'
 import KEY from "../../key.js"
 import "../../App.css"
 import LocationPin from "../LocationPin/LocationPin.js"
-
 
 
 /*const location = [
@@ -13,18 +12,6 @@ import LocationPin from "../LocationPin/LocationPin.js"
 ]*/
 
 class Map extends Component{
-
-   FetchData(ipAddress) {
-    useEffect(() => {
-        fetch(`https://geo.ipify.org/api/v1?apiKey=at_NJXxHw5dIXji1dpTeMgCxJhQP1AqN&ipAddress=${ipAddress}`)
-            .then(respone => {
-                if(respone.ok){
-                    return respone.json()
-                }
-            }
-            )
-          })
-        }
   static defaultProps = {
       center:{
         lat: 47.42216,

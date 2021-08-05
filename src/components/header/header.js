@@ -9,8 +9,9 @@ const searchButton = useRef(null)
 
   const handleClick= () => {
     const value = searchButton.current.value
-    console.log(FetchData(value))
+    return value  
   }
+  console.log(FetchData('22.2.2.2'))
 
     
     return (
