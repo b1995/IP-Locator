@@ -1,17 +1,30 @@
 
 import background from '../../Assets/pattern-bg.png'
 import '../../App.css'
-import React, {useRef} from 'react'
-import FetchData from '../fetchData'
+import React, {useRef, useState, useEffect} from 'react'
+import KEY from '../../key'
 function Headertext() {
+
+  const [value, setValue] = useState('')
 
 const searchButton = useRef(null)
 
   const handleClick= () => {
-    const value = searchButton.current.value
-    return value  
+    setValue(searchButton.current.value)
   }
-  console.log(FetchData('22.2.2.2'))
+
+
+
+useEffect(() => {
+  fetch(`https://geo.ipify.org/api/v1?apiKey=${KEY.geo}=${value}`)
+    .then(respone => {
+      if(respone.ok){
+        console.log(respone.json())
+        }
+      }
+    )
+    }
+    )
 
     
     return (
