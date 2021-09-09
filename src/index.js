@@ -1,22 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Headertext from './components/header/header.js';
-import Map from './components/Maps/Map.js'
 
-const location = ({
-  address: '1600 Amphitheatre Parkway, Mountain View, california.',
-  lat: 37.42216,
-  lng: -122.08427,
-})
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
-      <Headertext />
-      <Map location = { location } zoomLevel = { 17 }/>
-    </div>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

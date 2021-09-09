@@ -1,15 +1,18 @@
 
 import background from '../../Assets/pattern-bg.png'
 import '../../App.css'
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState, useEffect, useContext} from 'react'
 import KEY from '../../key'
+import { LocationContext } from '../../LocatioContext'
 function Headertext() {
 
   const [value, setValue] = useState('')
+  const [location, setLocation] = useContext(LocationContext);
 
 const searchButton = useRef(null)
 
-  const handleClick= () => {
+  const handleClick= (e) => {
+    e.preventDefault()
     setValue(searchButton.current.value)
   }
 
@@ -19,12 +22,14 @@ useEffect(() => {
   fetch(`https://geo.ipify.org/api/v1?apiKey=${KEY.geo}=${value}`)
     .then(respone => {
       if(respone.ok){
-        console.log(respone.json())
+          respone.json()
+          .then(data => {
+            setLocation(data.location)
+            console.log(data)
+          })
         }
-      }
-    )
-    }
-    )
+      })
+    },[value, setLocation])
 
     
     return (
